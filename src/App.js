@@ -25,6 +25,7 @@ class App extends React.Component {
         this.setState({ messages: messages });
       });
   };
+
   //adding a message
   postMessage = (data = {}) => {
     const url = "https://elamin-chat-server.glitch.me/messages";
@@ -40,7 +41,7 @@ class App extends React.Component {
     })
       .then(response => response.json())
       .then(res => {
-        this.getAllMessages();
+        // this.getAllMessages();
         //sending a message to the server when someone post
         socket.emit("chat", {
           message: "hi"
@@ -94,7 +95,7 @@ class App extends React.Component {
       <div>
         {this.state.messages.map(message => {
           const messageTime = moment(message.timeSent).format("h:mm a");
-          if (message.isSameIpAddress) {
+          if (this.person == message.from) {
             return (
               <MessageSent
                 key={message.id}

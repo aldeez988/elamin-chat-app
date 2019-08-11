@@ -1,5 +1,5 @@
 import React from "react";
-import MessageRecieved from "./MessageRecieved";
+import MessageReceived from "./MessageReceived";
 import MessageSent from "./MessageSent";
 import Compose from "./Compose";
 import moment from "moment";
@@ -73,7 +73,7 @@ class App extends React.Component {
     });
   };
 
-  //handle the sokect.io
+  //handle the socket.io
   handleSocket = () => {
     const socket = openSocket("https://elamin-chat-server.glitch.me");
     socket.emit("chat", {
@@ -108,7 +108,7 @@ class App extends React.Component {
             );
           } else {
             return (
-              <MessageRecieved
+              <MessageReceived
                 key={message.id}
                 deleteMessage={this.deleteMessage}
                 from={message.from}

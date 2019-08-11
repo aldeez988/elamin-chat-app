@@ -10,8 +10,6 @@ class Compose extends React.Component {
   };
 
   addEmoji = e => {
-    console.log(e);
-
     console.log("Emoje icon", "0x" + e.unified);
     if (e.unified.length <= 5) {
       let emojiPic = String.fromCodePoint(`0x${e.unified}`);

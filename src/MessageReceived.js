@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const MessageRecieved = props => {
+const MessageReceived = props => {
   return (
     <div class="message received">
       {props.from} <br />
@@ -14,4 +14,4 @@ const MessageRecieved = props => {
   );
 };
 
-export default MessageRecieved;
+export default MessageReceived;

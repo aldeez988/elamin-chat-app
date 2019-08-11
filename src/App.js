@@ -93,6 +93,9 @@ class App extends React.Component {
     });
     return (
       <div>
+        <div className="header-container d-flex justify-content-center">
+          <h1 className="header-font">Talky</h1>
+        </div>
         {this.state.messages.map(message => {
           const messageTime = moment(message.timeSent).format("h:mm a");
           if (this.person == message.from) {
